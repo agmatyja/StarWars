@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './App.css';
 import Title from './Title.js';
 import PeopleList from './PeopleList.js';
@@ -300,9 +301,11 @@ class App extends React.Component {
 	
     render() {
         return (
-            <div className={style.TodoApp}>
-                <Title title="Tytuł" count={this.state.data.length}/>
-				<PeopleList people={this.state.data} />
+            <div className={style.StarWarsApp + " container"}>
+                <div className={style.StarWarsAppDiv}>
+                    <Title title="Star Wars Heros" count={this.state.data.length}/>
+				    <PeopleList people={this.state.data} />
+                </div>    
             </div>
         );
     }

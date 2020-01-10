@@ -1,8 +1,9 @@
 import React from 'react';
+import style from './Title.css';
 class Title extends React.Component {
 	render() {
         return (
-            <h1>{this.props.title} {this.props.count}</h1>    
+            <h1>{this.props.title}</h1>    
         );
     }
 };

@@ -1,12 +1,28 @@
-.TodoApp {
-    background-color: lightgreen;
-    color: #222;
+body {
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+.StarWarsApp {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 100vw;
+    -webkit-perspective: 100vh; /* Safari 4-8 */
+    perspective: 100vh;
     height: 100vh;
+}
+
+.StarWarsAppDiv {
+  margin-top: -100px;
+  padding: 20px;
+  height: 100%;
+  position: absolute;
+  border: 1px solid black;
+  -webkit-transform-style: preserve-3d; /* Safari 3-8  */  
+  -webkit-transform: rotateX(20deg); /* Safari 3-8  */
+  transform-style: preserve-3d;
+  transform: rotateX(20deg);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
