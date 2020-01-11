@@ -9,6 +9,7 @@ import { hot } from 'react-hot-loader';
 class App extends React.Component {
     constructor(props){
         super(props);
+        console.log('reload')
         this.state = {
             data:  [
         {
@@ -285,26 +286,20 @@ class App extends React.Component {
     ]
         };
     }
-	
 
-    searchHero(event) {
+    searchHero(event, searchText) {
+        const url = "https://swapi.co/api/people/?search=" + searchText;
         event.preventDefault();
-        const {searchText} = this.state;
-        const url = "https//swapi.co/api/people/?search=" + searchText;
         fetch(url)
             .then(response => response.json())
-            .then(responseJson => this.setState({users: responseJson.items}));
+            .then(responseJson => this.setState({data: responseJson.results}));
     }
 	
-    removeHero(id) {
-        const remainder = this.state.data.filter(todo => todo.id !== id);
-        this.setState({data: remainder});
-    }
-	
+   	
     render() { return ( <div className={style.StarWarsApp + " container"}>
         <div className={style.StarWarsAppDiv}> 
         <Title title="Star Wars Heroes"/> 
-        <Search search={this.state.data}/>
+        <Search search={this.searchHero.bind(this)}/>
         <PeopleList people={this.state.data} />
         </div>     
         </div> ); 

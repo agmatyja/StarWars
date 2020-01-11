@@ -1,6 +1,15 @@
-.search {
+.search-form {
+	padding-right: 0;
+	margin-right: 0;	
+}
+
+.search-box {
 	background-color: #D0C000;
 	border: none;
 	color: black;
 }
+
+.search-button {
+	left: 15px;
+}	
 

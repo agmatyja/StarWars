@@ -1,5 +1,4 @@
 import React from 'react';
-import style from './PeopleList.css';
 import Person from '../components/Person.js';
 
 class PeopleList extends React.Component {

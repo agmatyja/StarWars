@@ -1,18 +1,13 @@
 import React from 'react';
 import style from './Search.css';
+
 class Search extends React.Component {
 	render() {
-		function onSubmit(event) {
-			console.log('submit')
-		}
-
         return (
-            <form onSubmit={onSubmit}>
-            	<div className="row">
-            		<input className={style.search + " col-10"} id="search" placeholder="search text"/>
-            		<button className="col-2" type="submit">Search</button>
-            	</div>
-            </form>
+           	<form className={style["search-form"] + " col-12 row"} onSubmit={(event) => this.props.search(event, document.getElementById('search-box').value)}>
+           		<input className={style["search-box"] + " col-10"} id="search-box" placeholder="search text"/>
+           		<button className={style["search-button"] + " col-2"} type="submit">Search</button>
+           	</form>
         );
     }
 };

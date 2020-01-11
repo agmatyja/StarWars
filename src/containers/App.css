@@ -15,14 +15,15 @@ body {
 }
 
 .StarWarsAppDiv {
-  margin-top: -100px;
-  height: 100%;
-  position: absolute;
-  border: 1px solid black;
-  -webkit-transform-style: preserve-3d; /* Safari 3-8  */  
-  -webkit-transform: rotateX(20deg); /* Safari 3-8  */
-  transform-style: preserve-3d;
-  transform: rotateX(20deg);
-  overflow-y: auto;
-  overflow-x: hidden;
+    margin-top: -100px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 1px solid black;
+    -webkit-transform-style: preserve-3d; /* Safari 3-8  */  
+    -webkit-transform: rotateX(20deg); /* Safari 3-8  */
+    transform-style: preserve-3d;
+    transform: rotateX(20deg);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
