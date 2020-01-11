@@ -12,7 +12,7 @@ class Person extends React.Component {
 					<OneLine label="mass" value={this.props.person.mass}></OneLine>
 					<OneLine label="hair color" value={this.props.person.hair_color}></OneLine>
 					<OneLine label="skin color" value={this.props.person.skin_color}></OneLine>
-					<OneLine label="eye color" value={this.props.eye_color}></OneLine>
+					<OneLine label="eye color" value={this.props.person.eye_color}></OneLine>
 					<OneLine label="birth year" value={this.props.person.birth_year}></OneLine>
 					<OneLine label="gender" value={this.props.person.gender}></OneLine>
             	</div>

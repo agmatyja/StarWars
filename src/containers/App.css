@@ -11,11 +11,11 @@ body {
     -webkit-perspective: 100vh; /* Safari 4-8 */
     perspective: 100vh;
     height: 100vh;
+    padding: 20px;
 }
 
 .StarWarsAppDiv {
   margin-top: -100px;
-  padding: 20px;
   height: 100%;
   position: absolute;
   border: 1px solid black;
