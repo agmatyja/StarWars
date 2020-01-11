@@ -5,8 +5,8 @@ import OneLine from './OneLine.js';
 class Person extends React.Component {
 	render() {
         return (
-            <div className={style.Person + " col-10"} key={this.props.i} data-toggle="collapse" data-target={'#details' + this.props.i}>
-				<div className="panel-header">{this.props.person.name}</div>
+            <div className={style.person + " col-12"} key={this.props.i} data-toggle="collapse" data-target={'#details' + this.props.i}>
+				<div className={style["person-name"] + " panel-header"}>{this.props.person.name}</div>
 				<div id={'details' + this.props.i} className="collapse">
 					<OneLine label="height" value={this.props.person.height}></OneLine>
 					<OneLine label="mass" value={this.props.person.mass}></OneLine>

@@ -1,7 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './App.css';
-import Title from './Title.js';
+import Title from '../components/Title.js';
+import Search from '../components/Search.js';
 import PeopleList from './PeopleList.js';
 import { hot } from 'react-hot-loader';
 
@@ -285,30 +286,29 @@ class App extends React.Component {
         };
     }
 	
-    addTodo(val){
-        const todo = {
-            text: val,
-            id: uuid.v4(),
-        };
-        const data = [...this.state.data, todo];
-        this.setState({data});
+
+    searchHero(event) {
+        event.preventDefault();
+        const {searchText} = this.state;
+        const url = "https//swapi.co/api/people/?search=" + searchText;
+        fetch(url)
+            .then(response => response.json())
+            .then(responseJson => this.setState({users: responseJson.items}));
     }
 	
-    removeTodo(id) {
+    removeHero(id) {
         const remainder = this.state.data.filter(todo => todo.id !== id);
         this.setState({data: remainder});
     }
 	
-    render() {
-        return (
-            <div className={style.StarWarsApp + " container"}>
-                <div className={style.StarWarsAppDiv}>
-                    <Title title="Star Wars Heros" count={this.state.data.length}/>
-				    <PeopleList people={this.state.data} />
-                </div>    
-            </div>
-        );
-    }
+    render() { return ( <div className={style.StarWarsApp + " container"}>
+        <div className={style.StarWarsAppDiv}> 
+        <Title title="Star Wars Heroes"/> 
+        <Search search={this.state.data}/>
+        <PeopleList people={this.state.data} />
+        </div>     
+        </div> ); 
+    } 
 }
 
 export default hot(module)(App);

@@ -1,4 +1,8 @@
-.Person {
+.person {
 	border: 2px solid #222;
+	cursor: pointer;
 }
 
+.person-name {
+	font-size: 20px;
+}
